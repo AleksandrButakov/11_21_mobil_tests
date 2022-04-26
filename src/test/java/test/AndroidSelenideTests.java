@@ -1,9 +1,9 @@
-package test.sample;
+package test;
 
-import com.codeborne.selenide.Selenide;
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import test.TestBase;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selectors.byClassName;
@@ -17,7 +17,7 @@ public class AndroidSelenideTests extends TestBase {
     @Test
     @DisplayName("My tests")
     void searchTest() {
-    /*
+    /*  на Selenium:
         AndroidElement searchElement = (AndroidElement) new WebDriverWait(driver, 30).until(
                 ExpectedConditions.elementToBeClickable(
                         MobileBy.AccessibilityId("Search Wikipedia")));
@@ -25,7 +25,7 @@ public class AndroidSelenideTests extends TestBase {
      */
         $(MobileBy.AccessibilityId("Search Wikipedia")).click();
 
-    /*
+    /*  на Selenium:
         AndroidElement insertTextElement = (AndroidElement) new WebDriverWait(driver, 30).until(
                 ExpectedConditions.elementToBeClickable(
                         MobileBy.id("org.wikipedia.alpha:id/search_src_text")));
@@ -33,7 +33,7 @@ public class AndroidSelenideTests extends TestBase {
      */
         $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
 
-    /*
+    /*  на Selenium:
         Thread.sleep(5000);
         List<AndroidElement> allProductsName = driver.findElementsByClassName(
                 "android.widget.TextView");
