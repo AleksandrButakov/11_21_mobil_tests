@@ -37,5 +37,4 @@ public class TestBase {
         Attach.video(sessionId);
     }
 
-
 }
