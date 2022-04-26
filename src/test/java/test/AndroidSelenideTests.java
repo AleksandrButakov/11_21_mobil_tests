@@ -8,6 +8,7 @@ import test.TestBase;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 
 public class AndroidSelenideTests extends TestBase {
 
@@ -17,29 +18,35 @@ public class AndroidSelenideTests extends TestBase {
     @Test
     @DisplayName("My tests")
     void searchTest() {
-    /*  на Selenium:
-        AndroidElement searchElement = (AndroidElement) new WebDriverWait(driver, 30).until(
-                ExpectedConditions.elementToBeClickable(
-                        MobileBy.AccessibilityId("Search Wikipedia")));
-        searchElement.click();
-     */
-        $(MobileBy.AccessibilityId("Search Wikipedia")).click();
 
-    /*  на Selenium:
-        AndroidElement insertTextElement = (AndroidElement) new WebDriverWait(driver, 30).until(
-                ExpectedConditions.elementToBeClickable(
-                        MobileBy.id("org.wikipedia.alpha:id/search_src_text")));
-        insertTextElement.sendKeys("BrowserStack");
-     */
-        $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
+        step("Type search", () -> {
+            /*  на Selenium:
+                AndroidElement searchElement = (AndroidElement) new WebDriverWait(driver, 30).until(
+                        ExpectedConditions.elementToBeClickable(
+                                MobileBy.AccessibilityId("Search Wikipedia")));
+                searchElement.click();
+             */
+            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
 
-    /*  на Selenium:
-        Thread.sleep(5000);
-        List<AndroidElement> allProductsName = driver.findElementsByClassName(
-                "android.widget.TextView");
-        assert (allProductsName.size() > 0);
-     */
-        $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
+            /*  на Selenium:
+                AndroidElement insertTextElement = (AndroidElement) new WebDriverWait(driver, 30).until(
+                        ExpectedConditions.elementToBeClickable(
+                                MobileBy.id("org.wikipedia.alpha:id/search_src_text")));
+                insertTextElement.sendKeys("BrowserStack");
+             */
+            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
+        });
+
+        step("Verify content found", () -> {
+
+            /*  на Selenium:
+            Thread.sleep(5000);
+            List<AndroidElement> allProductsName = driver.findElementsByClassName(
+                    "android.widget.TextView");
+            assert (allProductsName.size() > 0);
+             */
+            $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
+        });
 
     }
 
