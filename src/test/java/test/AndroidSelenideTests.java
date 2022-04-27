@@ -27,7 +27,7 @@ public class AndroidSelenideTests extends TestBase {
                                 MobileBy.AccessibilityId("Search Wikipedia")));
                 searchElement.click();
              */
-            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
+            //$(MobileBy.AccessibilityId("Search Wikipedia")).click();
 
             /*  на Selenium:
                 AndroidElement insertTextElement = (AndroidElement) new WebDriverWait(driver, 30).until(
@@ -35,7 +35,12 @@ public class AndroidSelenideTests extends TestBase {
                                 MobileBy.id("org.wikipedia.alpha:id/search_src_text")));
                 insertTextElement.sendKeys("BrowserStack");
              */
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
+            //$(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
+            $(MobileBy.id("ru.anbn.testapplication:id/editText1")).setValue("46");
+            //ru.anbn.testapplication
+            //android:id="@+id/editText1"
+            //ru.anbn.testapplication:id/editText1
+
         });
 
         step("Verify content found", () -> {
@@ -46,7 +51,7 @@ public class AndroidSelenideTests extends TestBase {
                     "android.widget.TextView");
             assert (allProductsName.size() > 0);
              */
-            $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
+            //$$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
         });
 
     }

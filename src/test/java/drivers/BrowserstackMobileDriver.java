@@ -22,12 +22,25 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(@Nonnull DesiredCapabilities caps) {
 
+        /*
+            You have successfully uploaded your app. Note the "app_url" value below. It uniquely identifies your
+            uploaded app on BrowserStack.
+            {"app_url":"bs://40baf56a2bdeb769f52078d697e7fda39a94412d"}
+            In your test script, use this "app_url" value to specify the application under test using the "app"
+            capability. During test execution, your app will automatically be installed and launched on the device
+            being tested.
+            caps.setCapability("app", "bs://40baf56a2bdeb769f52078d697e7fda39a94412d")
+         */
+
         // Set your access credentials
+        // caps.setCapability("browserstack.user", "aleksandrbutakov_KwWe1P");
+        // caps.setCapability("browserstack.key", "oNza8nFrrqhYaCuJTa16");
         caps.setCapability("browserstack.user", "aleksandrbutakov_KwWe1P");
         caps.setCapability("browserstack.key", "oNza8nFrrqhYaCuJTa16");
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        // caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        caps.setCapability("app", "bs://40baf56a2bdeb769f52078d697e7fda39a94412d");
 
         // Specify device and os_version for testing
         caps.setCapability("device", "Google Pixel 3");
