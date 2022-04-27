@@ -16,19 +16,15 @@ import static io.qameta.allure.Allure.step;
 
 @Tag("selenide")
 public class AndroidSelenideTests extends TestBase {
-    /*
-       Тест находящийся в классе AndroidSampleTests написанный на Selenium перепишем на Selenoid
-     */
+
     @Test
     @DisplayName("My tests")
     void searchTest() {
-
         step("Enter the first term", () -> {
             // $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
-            $(MobileBy.id("ru.anbn.testapplication:id/editText1")).setValue("15");
             //ru.anbn.testapplication
             //android:id="@+id/editText1"
-            //ru.anbn.testapplication:id/editText1
+            $(MobileBy.id("ru.anbn.testapplication:id/editText1")).setValue("15");
         });
 
         step("Enter the second term", () -> {
@@ -46,7 +42,6 @@ public class AndroidSelenideTests extends TestBase {
             // ru.anbn.testapplication
             // android:id="@+id/textView2"
             $(MobileBy.id("ru.anbn.testapplication:id/textView2")).shouldHave(text("18"));
-
         });
 
     }

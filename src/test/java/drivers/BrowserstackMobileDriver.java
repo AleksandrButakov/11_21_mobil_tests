@@ -1,6 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.SetConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -21,7 +22,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(@Nonnull DesiredCapabilities caps) {
-
         /*
             You have successfully uploaded your app. Note the "app_url" value below. It uniquely identifies your
             uploaded app on BrowserStack.
@@ -35,12 +35,12 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         // Set your access credentials
         // caps.setCapability("browserstack.user", "aleksandrbutakov_KwWe1P");
         // caps.setCapability("browserstack.key", "oNza8nFrrqhYaCuJTa16");
-        caps.setCapability("browserstack.user", "aleksandrbutakov_KwWe1P");
-        caps.setCapability("browserstack.key", "oNza8nFrrqhYaCuJTa16");
+        caps.setCapability("browserstack.user", SetConfig.authConfig.user());
+        caps.setCapability("browserstack.key", SetConfig.authConfig.key());
 
         // Set URL of the application under test
         // caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
-        caps.setCapability("app", "bs://40baf56a2bdeb769f52078d697e7fda39a94412d");
+        caps.setCapability("app", SetConfig.browserStackConfig.app());
 
         // Specify device and os_version for testing
         caps.setCapability("device", "Google Pixel 3");
