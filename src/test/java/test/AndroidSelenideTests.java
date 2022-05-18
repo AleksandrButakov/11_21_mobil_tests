@@ -40,12 +40,6 @@ public class AndroidSelenideTests extends TestBase {
 
         step("Verify content found", () -> {
 
-            /*  на Selenium:
-            Thread.sleep(5000);
-            List<AndroidElement> allProductsName = driver.findElementsByClassName(
-                    "android.widget.TextView");
-            assert (allProductsName.size() > 0);
-             */
             $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
         });
 
