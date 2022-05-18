@@ -46,8 +46,8 @@ public class AndroidSelenideTests extends TestBase {
 
 
         step("Checking Main menu, Search", () -> {
-            $(MobileBy.xpath("//android.widget.ImageView[@content-desc=\"Ещё\"]")).click();
-            
+            // $(MobileBy.xpath("//android.widget.ImageView[@content-desc=\"Ещё\"]")).click();
+            $(MobileBy.xpath("//android.widget.ImageView")).click();
             $$(MobileBy.id("com.anbn.pinout:id/title")).findBy(text("Строка")).click();
             $(MobileBy.id("com.anbn.pinout:id/textView1")).shouldHave(text("Для поиска необходимого оборудо"));
             $(MobileBy.id("android:id/search_button")).click();
@@ -83,7 +83,8 @@ public class AndroidSelenideTests extends TestBase {
         });
 
         step("Checking Main menu, About", () -> {
-            $(MobileBy.xpath("//android.widget.ImageView[@content-desc=\"Ещё\"]")).click();
+            // $(MobileBy.xpath("//android.widget.ImageView[@content-desc=\"Ещё\"]")).click();
+            $(MobileBy.xpath("//android.widget.ImageView")).click();
             $$(MobileBy.id("com.anbn.pinout:id/title")).findBy(text("О программе")).click();
             $(MobileBy.id("com.anbn.pinout:id/textView3")).shouldHave(text("О ПРОГРАММЕ"));
             $(MobileBy.id("com.anbn.pinout:id/button1")).click();
