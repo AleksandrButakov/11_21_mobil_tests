@@ -24,7 +24,7 @@ public class AndroidSampleTests {
         caps.setCapability("browserstack.key", "oNza8nFrrqhYaCuJTa16");
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        caps.setCapability("app", "bs://7ee3319df6dad76013f5461ee617064212874b8a");
 
         // Specify device and os_version for testing
         caps.setCapability("device", "Google Pixel 3");

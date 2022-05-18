@@ -27,16 +27,16 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         caps.setCapability("browserstack.key", "oNza8nFrrqhYaCuJTa16");
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        caps.setCapability("app", "bs://7ee3319df6dad76013f5461ee617064212874b8a");
 
         // Specify device and os_version for testing
         caps.setCapability("device", "Google Pixel 3");
         caps.setCapability("os_version", "9.0");
 
         // Set other BrowserStack capabilities
-        caps.setCapability("project", "First Java Project");
+        caps.setCapability("project", "Pinout Project");
         caps.setCapability("build", "browserstack-build-1");
-        caps.setCapability("name", "first_test");
+        caps.setCapability("name", "Pinout_test");
 
         return new AndroidDriver(getBrowserstackUrl(), caps);
     }
